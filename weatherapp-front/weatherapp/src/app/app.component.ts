@@ -83,15 +83,21 @@ export class AppComponent {
         error2 => {
         if(error2.error.hasOwnProperty('required_date_search')){
           let message = (error2.error as any).required_date_search[0]
+            this.current = 0
+            clearInterval(this.interval_polling)
             console.log(message)
             alert(message)
         }
         else if (error2.error.hasOwnProperty('iso_country_code')){
           let message = 'country_code: ' + (error2.error as any).iso_country_code[0]
+          this.current = 0
+          clearInterval(this.interval_polling)
           console.log(message)
           alert(message)
         }
         else{
+          this.current = 0
+          clearInterval(this.interval_polling)
           console.log(error2.error)
           alert('Unknown error')
         }
