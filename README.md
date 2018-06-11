@@ -1,11 +1,18 @@
 # WeatherApp
 Задание было выполнено на Ubuntu 17.10
+
+# Getting Started
+--Для начала работы активируйте окружение:
+
+$ source env_name/bin/activate
+
 # Requirements backend
 --Для работы бекенда требуется предустановленный RabbitMQ и Celery.
 https://www.rabbitmq.com/download.html
 
+
 --Зависимости:
-pip install -r requirements.txt установит зависимости drf & celery & flower.
+$ pip install -r requirements.txt установит зависимости drf & celery & flower.
 
 --В файле settings.py установите secret key а так же api key, выданный вам openweathermap.org
 
@@ -13,13 +20,19 @@ pip install -r requirements.txt установит зависимости drf & 
 
 --Примените миграции:
 
-python manage.py makemigrations
+$ python manage.py makemigrations
 
-python manage.py migrate
+$ python manage.py migrate
 
 --Запуск воркеров производить из папки проекта командой :
 
-celery worker --app=main_app.tasks --loglevel=info
+$ celery worker --app=main_app.tasks --loglevel=info
+
+--Для отслеживания и ведения статистики нагрузки и выполения tasks используйте flower
+
+$ flower --port 5555
+
+,откройте localhost:5555
 
 # Requirements frontend
 --Особых зависимостей нет. Одна из них MaterializeCSS.
