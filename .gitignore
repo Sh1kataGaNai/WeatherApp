@@ -1,0 +1,22 @@
+.idea
+__pycache__
+migrations
+db.sqlite3
+node_modules
+
+# IDEs and editors
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# misc
+/.sass-cache
+npm-debug.log
+testem.log
+
+# System Files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+
+<div class="col s12 m6 l3">
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" [src]= "weather_icon">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{forecast.weather_main}}
+        <i class="material-icons right">more_vert</i></span>
+      <p>{{forecast.datetime_forecast}}</p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">More info<i class="material-icons right">close</i></span>
+      <ul>
+        <li>Description: {{forecast.weather_description}}</li>
+        <li>Clouds %: {{forecast.clouds_percent}}</li>
+        <li>Wind Speed: {{forecast.wind_speed}}</li>
+        <li>Wind Deg: {{forecast.wind_degree}}</li>
+        <li>Rain Volume: {{forecast.rain_volume}}</li>
+        <li>Snow Volume: {{forecast.snow_volume}}</li>
+        <li>Pressure: {{forecast.pressure}}</li>
+        <li>Pressure Sea Level: {{forecast.pressure_sea_level}}</li>
+        <li>Pressure Ground Level: {{forecast.pressure_grnd_level}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,67 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">WeatherApp</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <form id="form-search" (ngSubmit)="getForecast()">
+  <div class="col">
+    <div class="search s12 m6">
+
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Search</span>
+          <div class="row search">
+            <div class="col s12 m4">
+              <div class="input-field">
+                <input placeholder="e.g Alaska" id="city" type="text" [(ngModel)]="city_input" class="validate"
+                       required [ngModelOptions]="{standalone: true}">
+                <label for="city">City</label>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="input-field">
+                <input placeholder="e.g US" id="country_code" type="text" [(ngModel)]="country_code_input"
+                       class="validate" required [ngModelOptions]="{standalone: true}">
+                <label for="country_code">Country Code</label>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="input-field">
+                <input placeholder="e.g 2018-06-11" id="date_forecast" type="text" [(ngModel)]="date_forecast_input"
+                       class="validate" required [ngModelOptions]="{standalone: true}">
+                <label for="date_forecast">Date Forecast</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-action">
+          <button type="submit" class="waves-effect waves-teal btn-flat">Get</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </form>
+  <div class="col">
+    <app-city *ngIf="show_city_component" [style.visibility]="show_city_component ? 'visible' : 'hidden'"
+              [city]="data.city"></app-city>
+  </div>
+  <div class="row">
+    <app-forecast
+      *ngFor="let forecast of data.forecast"
+      [forecast]="forecast"
+
+    ></app-forecast>
+  </div>
+</div>
+
+<div>
+  <app-footer></app-footer>
+</div>
+
