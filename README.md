@@ -8,16 +8,24 @@ https://www.rabbitmq.com/download.html
 pip install -r requirements.txt установит зависимости drf & celery & flower.
 
 --В файле settings.py установите secret key а так же api key, выданный вам openweathermap.org
+
 --Сконфигурируйте CORS в settings.py. Сейчас настроен на localhost:4200 - dev server angular 5. Необходимость из-за возможности работы фронтенда и бекенда в разных контекстах.
+
 --Примените миграции:
+
 python manage.py makemigrations
+
 python manage.py migrate
+
 --Запуск воркеров производить из папки проекта командой :
+
 celery worker --app=main_app.tasks --loglevel=info
 
 # Requirements frontend
 --Особых зависимостей нет. Одна из них MaterializeCSS.
+
 Необходим предустановленный NodeJS, AngularCLI, npm.
+
 Версия на dev pc:
 
 Angular CLI: 1.7.4
